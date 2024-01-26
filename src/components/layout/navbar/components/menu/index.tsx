@@ -10,12 +10,17 @@ import useMenu from "./useMenu";
 import Link from "next/link";
 import { OptionMenu } from "../../types";
 import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
-export default function Menu() {
+type MenuProps = {
+  className?: string;
+};
+
+export default function Menu({ className }: MenuProps) {
   const { optionsMenu } = useMenu();
 
   return (
-    <NavigationMenu className="h-full">
+    <NavigationMenu className={cn("h-full", className)}>
       <NavigationMenuList className="h-full">
         {optionsMenu.map(({ name, href }) => (
           <Menu.Option key={name} href={href} name={name} />
@@ -25,9 +30,9 @@ export default function Menu() {
   );
 }
 
-type MenuProps = {} & OptionMenu;
+type MenuOptionProps = {} & OptionMenu;
 
-Menu.Option = function MenuItem({ href, name }: MenuProps) {
+Menu.Option = function MenuItem({ href, name }: MenuOptionProps) {
   const pathname = usePathname();
   const active = pathname === href;
 
