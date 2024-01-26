@@ -17,7 +17,7 @@ export default function FeaturedCourses() {
       <div
         className={cn(
           "pt-3 grid gap-7 grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
-          showAll ? "" : "max-h-[31rem] overflow-hidden"
+          showAll ? "" : "max-h-[30rem] overflow-hidden"
         )}
       >
         {featuredCourses.map((course) => (

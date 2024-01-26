@@ -20,6 +20,7 @@ const config = {
     extend: {
       backgroundImage: {
         home: "url('/images/home-girl.svg')",
+        "default-ad-home-banner": "url('/images/default-ad-home-banner.svg')",
       },
       colors: {
         border: "hsl(var(--border))",
