@@ -1,3 +1,4 @@
+import FeaturedCourses from "@/components/sections/home/featured-courses";
 import Intro from "@/components/sections/home/intro";
 import TopCategories from "@/components/sections/home/top-categories";
 
@@ -7,6 +8,8 @@ export default function Home() {
       <Intro />
 
       <TopCategories />
+
+      <FeaturedCourses />
     </main>
   );
 }

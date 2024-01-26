@@ -14,11 +14,12 @@ import {
 } from "lucide-react";
 import { Category } from "./types";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 type UseTopCategories = {
   topCategories: Category[];
   showAll: boolean;
-  toggleShowAll: () => void;
+  ButtonShowAll: React.ReactNode;
 };
 
 export default function useTopCategories(): UseTopCategories {
@@ -91,9 +92,19 @@ export default function useTopCategories(): UseTopCategories {
     },
   ];
 
+  const ButtonShowAll = (
+    <Button
+      variant="outline"
+      className="rounded-3xl font-bold"
+      onClick={toggleShowAll}
+    >
+      {showAll ? "Show Less" : "All Categories"}
+    </Button>
+  );
+
   return {
     topCategories,
     showAll,
-    toggleShowAll,
+    ButtonShowAll,
   };
 }

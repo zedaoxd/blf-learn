@@ -1,36 +1,19 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Jost } from "next/font/google";
 import useTopCategories from "./useTopCategories";
 import CardCategory from "./components/card-category";
-
-const jost = Jost({ subsets: ["latin"], weight: ["400"] });
+import Section from "@/components/shared/section";
 
 export default function TopCategories() {
-  const { topCategories, showAll, toggleShowAll } = useTopCategories();
+  const { topCategories, showAll, ButtonShowAll } = useTopCategories();
 
   return (
-    <section className="container flex flex-col gap-10">
-      <div className="flex flex-col gap-2 justify-between sm:flex-row">
-        <div className="flex flex-col gap-2">
-          <h2 className="text-4xl font-semibold">Top Categories</h2>
-
-          <p className={cn(jost.className, "text-lg")}>
-            Explore our Popular Categories
-          </p>
-        </div>
-
-        <Button
-          variant="outline"
-          className="rounded-3xl font-bold"
-          onClick={toggleShowAll}
-        >
-          {showAll ? "Show Less" : "Show All"}
-        </Button>
-      </div>
-
+    <Section
+      title="Top Categories"
+      subtitle="Explore our Popular Categories"
+      action={ButtonShowAll}
+    >
       <div
         className={cn(
           "pt-3 grid gap-7 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5",
@@ -41,6 +24,6 @@ export default function TopCategories() {
           <CardCategory key={category.name} {...category} />
         ))}
       </div>
-    </section>
+    </Section>
   );
 }
