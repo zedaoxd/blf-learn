@@ -21,6 +21,7 @@ const config = {
       backgroundImage: {
         home: "url('/images/home-girl.svg')",
         "default-ad-home-banner": "url('/images/default-ad-home-banner.svg')",
+        benefits: "url('/images/benefits.svg')",
       },
       colors: {
         border: "hsl(var(--border))",

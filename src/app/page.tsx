@@ -1,4 +1,5 @@
 import ADBanner from "@/components/ad-banner";
+import Benefits from "@/components/sections/home/benefits";
 import FeaturedCourses from "@/components/sections/home/featured-courses";
 import Intro from "@/components/sections/home/intro";
 import Metrics from "@/components/sections/home/metrics";
@@ -16,6 +17,8 @@ export default function Home() {
       <ADBanner />
 
       <Metrics />
+
+      <Benefits />
     </main>
   );
 }
