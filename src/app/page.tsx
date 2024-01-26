@@ -1,7 +1,12 @@
+import Intro from "@/components/sections/home/intro";
+import TopCategories from "@/components/sections/home/top-categories";
+
 export default function Home() {
   return (
-    <main>
-      <h1>HOME</h1>
+    <main className="flex flex-col gap-20">
+      <Intro />
+
+      <TopCategories />
     </main>
   );
 }
