@@ -14,7 +14,9 @@ export default function ADBanner() {
             websites, static websites, and server-side rendering websites.
           </p>
 
-          <Button className="rounded-3xl">Explorer course</Button>
+          <Button className="rounded-3xl" size="min">
+            Explorer course
+          </Button>
         </div>
       </div>
     </div>
