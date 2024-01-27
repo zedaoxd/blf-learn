@@ -19,13 +19,8 @@ export default function Section({
   children,
 }: SectionProps) {
   return (
-    <section className="container flex flex-col gap-10">
-      <div
-        className={cn(
-          "flex flex-col gap-2 justify-between sm:flex-row",
-          className
-        )}
-      >
+    <section className={cn("container flex flex-col gap-10", className)}>
+      <div className="flex flex-col gap-2 justify-between sm:flex-row">
         <div className="flex flex-col gap-2">
           <h2 className="text-4xl font-semibold">{title}</h2>
 

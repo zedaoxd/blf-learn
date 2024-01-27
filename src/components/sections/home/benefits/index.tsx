@@ -11,8 +11,8 @@ export default function Benefits() {
   const { benefits } = useBenefits();
 
   return (
-    <section className="container h-[469px] flex items-center">
-      <div className="h-full flex-1 bg-benefits bg-no-repeat bg-center bg-contain"></div>
+    <section className="container h-[469px] flex items-center gap-2">
+      <div className="h-full flex-1 bg-benefits bg-no-repeat bg-center bg-contain hidden md:block"></div>
 
       <div className="flex-1 max-w-lg flex flex-col align-top gap-6">
         <h2 className="text-3xl font-semibold leading-9 text-black">
