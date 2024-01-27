@@ -3,6 +3,7 @@ import { Exo } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";
 import { cn } from "@/lib/utils";
+import Footer from "@/components/layout/footer";
 
 const exo = Exo({ subsets: ["latin"] });
 
@@ -20,7 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(exo.className)}>
         <Navbar />
+
         {children}
+
+        <Footer />
       </body>
     </html>
   );

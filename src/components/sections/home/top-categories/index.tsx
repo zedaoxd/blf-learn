@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import useTopCategories from "./useTopCategories";
 import CardCategory from "./components/card-category";
 import Section from "@/components/shared/section";
