@@ -1,12 +1,12 @@
 import ADBanner from "@/components/ad-banner";
-import Benefits from "@/components/sections/home/benefits";
-import FeaturedCourses from "@/components/sections/home/featured-courses";
-import Intro from "@/components/sections/home/intro";
-import LatestArticles from "@/components/sections/home/latest-articles";
-import Metrics from "@/components/sections/home/metrics";
-import StartNow from "@/components/sections/home/start-now";
-import StudentsFeedback from "@/components/sections/home/students-feedback";
-import TopCategories from "@/components/sections/home/top-categories";
+import Benefits from "@/components/modules/home/benefits";
+import FeaturedCourses from "@/components/modules/home/featured-courses";
+import Intro from "@/components/modules/home/intro";
+import LatestArticles from "@/components/modules/home/latest-articles";
+import Metrics from "@/components/modules/home/metrics";
+import StartNow from "@/components/modules/home/start-now";
+import StudentsFeedback from "@/components/modules/home/students-feedback";
+import TopCategories from "@/components/modules/home/top-categories";
 
 export default function Home() {
   return (
