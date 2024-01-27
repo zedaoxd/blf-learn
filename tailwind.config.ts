@@ -22,6 +22,7 @@ const config = {
         home: "url('/images/home-girl.svg')",
         "default-ad-home-banner": "url('/images/default-ad-home-banner.svg')",
         benefits: "url('/images/benefits.svg')",
+        "lets-start-banner": "url('/images/lets-start-banner.svg')",
       },
       colors: {
         border: "hsl(var(--border))",

@@ -3,6 +3,7 @@ import Benefits from "@/components/sections/home/benefits";
 import FeaturedCourses from "@/components/sections/home/featured-courses";
 import Intro from "@/components/sections/home/intro";
 import Metrics from "@/components/sections/home/metrics";
+import StartNow from "@/components/sections/home/start-now";
 import StudentsFeedback from "@/components/sections/home/students-feedback";
 import TopCategories from "@/components/sections/home/top-categories";
 
@@ -22,6 +23,8 @@ export default function Home() {
       <Benefits />
 
       <StudentsFeedback />
+
+      <StartNow />
     </main>
   );
 }
