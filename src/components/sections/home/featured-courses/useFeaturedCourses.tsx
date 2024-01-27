@@ -2,21 +2,14 @@
 
 import { Course } from "./types";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import Link from "next/link";
 
 type UseFeaturedCourse = {
   featuredCourses: Course[];
-  showAll: boolean;
   ButtonShowAll: React.ReactNode;
 };
 
 export default function useFeaturedCourses(): UseFeaturedCourse {
-  const [showAll, setShowAll] = useState(false);
-
-  const toggleShowAll = () => {
-    setShowAll((prev) => !prev);
-  };
-
   const featuredCourses: Course[] = [
     {
       id: "b1deb8d4-4eb5-4b94-aa9c-db5d3fdf11bc",
@@ -88,18 +81,13 @@ export default function useFeaturedCourses(): UseFeaturedCourse {
   ];
 
   const ButtonShowAll = (
-    <Button
-      variant="outline"
-      className="rounded-3xl font-bold"
-      onClick={toggleShowAll}
-    >
-      {showAll ? "Show Less" : "All Courses"}
+    <Button variant="outline" className="font-bold" asChild>
+      <Link href="/courses">All Courses</Link>
     </Button>
   );
 
   return {
     featuredCourses,
-    showAll,
     ButtonShowAll,
   };
 }

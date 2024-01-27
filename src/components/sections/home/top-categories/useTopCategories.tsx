@@ -13,22 +13,15 @@ import {
   Waypoints,
 } from "lucide-react";
 import { Category } from "./types";
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 type UseTopCategories = {
   topCategories: Category[];
-  showAll: boolean;
   ButtonShowAll: React.ReactNode;
 };
 
 export default function useTopCategories(): UseTopCategories {
-  const [showAll, setShowAll] = useState(false);
-
-  function toggleShowAll() {
-    setShowAll((prev) => !prev);
-  }
-
   const topCategories: Category[] = [
     {
       name: "Art & Design",
@@ -93,18 +86,13 @@ export default function useTopCategories(): UseTopCategories {
   ];
 
   const ButtonShowAll = (
-    <Button
-      variant="outline"
-      className="rounded-3xl font-bold"
-      onClick={toggleShowAll}
-    >
-      {showAll ? "Show Less" : "All Categories"}
+    <Button variant="outline" className="font-bold" asChild>
+      <Link href="/categories">All Categories</Link>
     </Button>
   );
 
   return {
     topCategories,
-    showAll,
     ButtonShowAll,
   };
 }
