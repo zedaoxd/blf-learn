@@ -49,7 +49,7 @@ export default function CardCourseHorizontal({
       </CardContent>
 
       <div className="col-span-2 flex flex-col justify-between">
-        <CardHeader>
+        <CardHeader className="flex flex-col gap-3">
           <p className={cn(jost.className, "text-base leading-6")}>
             by: <span className="font-bold">{author}</span>
           </p>

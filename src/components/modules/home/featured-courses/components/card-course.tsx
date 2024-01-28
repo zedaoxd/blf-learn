@@ -4,9 +4,9 @@ import { cn } from "@/lib/utils";
 import { Clock, GraduationCap } from "lucide-react";
 import { Jost } from "next/font/google";
 import Image from "next/image";
-import useCardCourse from "./useCardCourse";
 import Link from "next/link";
 import { UUID } from "crypto";
+import priceToTsx from "@/components/shared/priceToTsx";
 
 const jost = Jost({ subsets: ["latin"], weight: ["400"] });
 
@@ -33,8 +33,6 @@ export default function CardCourse({
   category,
   discountPercentage,
 }: CardCourseProps) {
-  const { priceFormated } = useCardCourse(price, discountPercentage);
-
   return (
     <div className="w-full h-full rounded-2xl border overflow-hidden lg:rounded-3xl relative transition-transform transform-gpu hover:-translate-y-3 hover:shadow-lg">
       <div className="min-w-[410px] h-60 relative">
@@ -71,7 +69,7 @@ export default function CardCourse({
 
         <div className="flex justify-between items-center">
           <p className={cn(jost.className, "text-sm text-gray-500")}>
-            {priceFormated}
+            {priceToTsx(price, discountPercentage)}
           </p>
 
           <Link

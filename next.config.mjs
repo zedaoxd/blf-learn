@@ -3,7 +3,8 @@ const nextConfig = {
     images: {
         remotePatterns: [
             {
-                hostname:  'sbruodoekbkbgiiyjxcc.supabase.co',
+                hostname:  process.env.NEXT_PUBLIC_SUPABASE_STORAGE_HOSTNAME,
+                protocol:  'https',
             }
         ]
     }

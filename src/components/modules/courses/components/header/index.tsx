@@ -44,7 +44,9 @@ export default function Header({ searchParams }: HeaderProps) {
             <List
               className={cn(
                 "h-6 w-6",
-                searchParams?.list === "true" ? "text-primary" : "text-black"
+                searchParams.list === undefined || searchParams.list === "true"
+                  ? "text-primary"
+                  : "text-black"
               )}
             />
           </Link>
