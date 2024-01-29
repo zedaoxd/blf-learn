@@ -5,7 +5,7 @@ import SearchBar from "../search-bar";
 import Link from "next/link";
 
 type HeaderProps = {
-  searchParams: { search?: string; list?: string };
+  searchParams: { search?: string; listType?: "list" | "grid" };
 };
 
 export default function Header({ searchParams }: HeaderProps) {
@@ -22,13 +22,15 @@ export default function Header({ searchParams }: HeaderProps) {
           <Link
             href={{
               pathname: "/courses",
-              query: { ...searchParams, list: "false" },
+              query: { ...searchParams, listType: "grid" },
             }}
           >
             <Grid
               className={cn(
                 "h-6 w-6",
-                searchParams?.list === "false" ? "text-primary" : "text-black"
+                searchParams?.listType === "grid"
+                  ? "text-primary"
+                  : "text-black"
               )}
             />
           </Link>
@@ -38,13 +40,14 @@ export default function Header({ searchParams }: HeaderProps) {
           <Link
             href={{
               pathname: "/courses",
-              query: { ...searchParams, list: "true" },
+              query: { ...searchParams, listType: "list" },
             }}
           >
             <List
               className={cn(
                 "h-6 w-6",
-                searchParams.list === undefined || searchParams.list === "true"
+                searchParams.listType === undefined ||
+                  searchParams.listType === "list"
                   ? "text-primary"
                   : "text-black"
               )}

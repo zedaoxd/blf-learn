@@ -1,13 +1,14 @@
 import Header from "@/components/modules/courses/components/header";
 import ListCourses from "@/components/modules/courses/components/list-courses";
 import { Course } from "@/components/modules/courses/components/types";
+import Show from "@/lib/show";
 
 type CoursesProps = {
-  searchParams: { search?: string; list?: string };
+  searchParams: { search?: string; listType?: "list" | "grid" };
 };
 
 export default function Courses({ searchParams }: CoursesProps) {
-  const { list } = searchParams;
+  const { listType } = searchParams;
 
   const courses: Course[] = [
     {
@@ -31,9 +32,9 @@ export default function Courses({ searchParams }: CoursesProps) {
         <div className="col-span-3 flex flex-col gap-8">
           <Header searchParams={searchParams} />
 
-          {list === undefined || list === "true" ? (
+          <Show when={listType === undefined || listType === "list"}>
             <ListCourses courses={courses} />
-          ) : null}
+          </Show>
         </div>
 
         <div className="h-full border">filters</div>
