@@ -5,13 +5,12 @@ import { Clock, GraduationCap } from "lucide-react";
 import { Jost } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import { UUID } from "crypto";
 import priceToTsx from "@/components/shared/priceToTsx";
 
 const jost = Jost({ subsets: ["latin"], weight: ["400"] });
 
 type CardCourseProps = {
-  image: string;
+  thumbnail: string;
   title: string;
   author: string;
   duration: string;
@@ -19,12 +18,13 @@ type CardCourseProps = {
   price: number;
   category: string;
   discountPercentage?: number;
-  id: UUID;
+  id: string;
+  className?: string;
 };
 
 export default function CardCourse({
   id,
-  image,
+  thumbnail,
   title,
   author,
   duration,
@@ -32,11 +32,18 @@ export default function CardCourse({
   price,
   category,
   discountPercentage,
+  className,
 }: CardCourseProps) {
+  console.log("CardCourse discountPercentage: ", discountPercentage);
   return (
-    <div className="w-full h-full rounded-2xl border overflow-hidden lg:rounded-3xl relative transition-transform transform-gpu hover:-translate-y-3 hover:shadow-lg">
+    <div
+      className={cn(
+        "w-full h-full rounded-2xl border overflow-hidden lg:rounded-3xl",
+        className
+      )}
+    >
       <div className="min-w-[410px] h-60 relative">
-        <Image src={image} alt={title} fill sizes="100%" />
+        <Image src={thumbnail} alt={title} fill sizes="100%" />
 
         <Badge
           className="absolute top-2 left-2 lg:top-3 lg:left-3"
@@ -55,7 +62,8 @@ export default function CardCourse({
 
         <div className="flex gap-6">
           <div className={cn(jost.className, "flex gap-2 items-baseline")}>
-            <Clock size={16} className="text-primary" /> <span>{duration}</span>
+            <Clock size={16} className="text-primary" />
+            <span>{duration} Weeks</span>
           </div>
 
           <div className={cn(jost.className, "flex gap-2 items-baseline")}>
@@ -74,7 +82,10 @@ export default function CardCourse({
 
           <Link
             href={`/courses/${id}`}
-            className="font-bold text-lg text-black hover:underline"
+            className={cn(
+              jost.className,
+              "font-bold text-lg text-black hover:underline"
+            )}
           >
             View More
           </Link>

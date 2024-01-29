@@ -1,8 +1,7 @@
-import { Course } from "../types";
 import CardCourseHorizontal from "./components/card-course-horizontal";
 
 type ListCoursesProps = {
-  courses: Course[];
+  courses: Course.Model[];
 };
 
 export default function ListCourses({ courses }: ListCoursesProps) {

@@ -2,7 +2,7 @@
 
 import Section from "@/components/shared/section";
 import useFeaturedCourses from "./useFeaturedCourses";
-import CardCourse from "./components/card-course";
+import CardCourse from "../../../shared/card-course";
 
 export default function FeaturedCourses() {
   const { featuredCourses, ButtonShowAll } = useFeaturedCourses();
@@ -15,7 +15,11 @@ export default function FeaturedCourses() {
     >
       <div className="pt-3 grid gap-7 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {featuredCourses.map((course) => (
-          <CardCourse key={course.id} {...course} />
+          <CardCourse
+            className="relative transition-transform transform-gpu hover:-translate-y-3 hover:shadow-lg"
+            key={course.id}
+            {...course}
+          />
         ))}
       </div>
     </Section>

@@ -23,11 +23,11 @@ type CardCourseHorizontalProps = {
   title: string;
   thumbnail: string;
   duration: string;
-  students: number;
+  numberOfStudents: number;
   lessons: number;
   price: number;
   level: string;
-  discontPercentage?: number;
+  discountPercentage?: number;
 };
 
 export default function CardCourseHorizontal({
@@ -36,12 +36,13 @@ export default function CardCourseHorizontal({
   title,
   thumbnail,
   duration,
-  students,
+  numberOfStudents,
   lessons,
   price,
   level,
-  discontPercentage,
+  discountPercentage,
 }: CardCourseHorizontalProps) {
+  console.log("CardCourseHorizontal discountPercentage: ", discountPercentage);
   return (
     <Card className="w-full grid grid-cols-3 h-64 overflow-hidden">
       <CardContent className="relative">
@@ -65,7 +66,7 @@ export default function CardCourseHorizontal({
             />
 
             <CardDescriptionHorizontal
-              description={`${students} students`}
+              description={`${numberOfStudents} students`}
               Icon={GraduationCap}
             />
 
@@ -82,13 +83,13 @@ export default function CardCourseHorizontal({
           <Separator />
 
           <div className="w-full flex justify-between">
-            <p>{priceToTsx(price, discontPercentage)}</p>
+            <p>{priceToTsx(price, discountPercentage)}</p>
 
             <Link
               href={`/courses/${id}`}
               className={cn(
                 jost.className,
-                "font-medium leading-7 text-lg hover:underline"
+                "font-bold text-lg text-black hover:underline"
               )}
             >
               View More
