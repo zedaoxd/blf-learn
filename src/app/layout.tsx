@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/navbar";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/layout/footer";
+import { Toaster } from "sonner";
 
 const exo = Exo({ subsets: ["latin"] });
 
@@ -25,6 +26,8 @@ export default function RootLayout({
         {children}
 
         <Footer />
+
+        <Toaster />
       </body>
     </html>
   );
