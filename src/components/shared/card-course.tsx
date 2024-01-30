@@ -34,7 +34,6 @@ export default function CardCourse({
   discountPercentage,
   className,
 }: CardCourseProps) {
-  console.log("CardCourse discountPercentage: ", discountPercentage);
   return (
     <div
       className={cn(

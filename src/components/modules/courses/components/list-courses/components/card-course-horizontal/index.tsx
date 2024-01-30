@@ -42,7 +42,6 @@ export default function CardCourseHorizontal({
   level,
   discountPercentage,
 }: CardCourseHorizontalProps) {
-  console.log("CardCourseHorizontal discountPercentage: ", discountPercentage);
   return (
     <Card className="w-full grid grid-cols-3 h-64 overflow-hidden">
       <CardContent className="relative">

@@ -3,7 +3,6 @@ import { cookies } from "next/headers";
 import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
 
 export async function GET(request: NextRequest) {
-  console.log("Auth_Verify_Email", request.url);
   const requestURL = new URL(request.url);
   const code = requestURL.searchParams.get("code");
 

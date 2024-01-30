@@ -9,7 +9,7 @@ export async function isAuthenticated() {
     const {
       data: { session },
     } = await supabase.auth.getSession();
-    console.log(`session: `, session);
+
     loggedIn = session !== null;
   } catch (error) {
     console.log(`isAuthenticated error`, error);
